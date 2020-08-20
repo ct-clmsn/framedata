@@ -24,6 +24,9 @@ Boost Software License
 * Custom data types (float, integer, string) with hashing support
 * Bloom filter implementation
 
+### Demo
+`cargo run --example example1`
+
 ### TODO
 * Add parallelization support
 * Improve robustness of csv support
