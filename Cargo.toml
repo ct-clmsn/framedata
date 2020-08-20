@@ -1,0 +1,12 @@
+[package]
+name = "framedata"
+version = "0.0.1"
+authors = ["Christopher Taylor"]
+edition = "2018"
+license-file = "LICENSE_1_0.txt"
+keywords = ["datascience", "dataframe", "statistics", "summary"]
+categories = ["data-structures", "mathematics", "science"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
