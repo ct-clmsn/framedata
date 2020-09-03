@@ -1110,6 +1110,30 @@ impl<'a> Group<'a> {
 
         }).collect()
     }
+
+    pub fn head(&self, num_rows : usize) {
+        let width = 15;
+        for lbl in self.labels.iter() { print!("{:^width$} ", lbl, width=width); }
+        print!("\n");
+
+        for row in 0..num_rows {
+            print!("{}", row);
+            for column in 0..self.columns.len() {
+                match self.columns[column][row] {
+                    DataTypes::FloatType(FloatType{value : _}) => {
+                        print!(" {:^width$}", self.columns[column][row].fvalue(), width=width);
+                    },
+                    DataTypes::IntegerType(IntegerType{value : _}) => {
+                        print!(" {:^width$}", self.columns[column][row].ivalue(), width=width);
+                    },
+                    DataTypes::StringType(StringType{value : _}) => { 
+                        print!(" {:^width$}", self.columns[column][row].svalue(), width=width);
+                    },
+                };
+            }
+            print!("\n");
+        }
+    }
     
     pub fn print(&self) {
         for (i, k) in self.column_indices.iter().enumerate().map(|(y, x)| (y, self.df.labels.get(*x).unwrap())) {
